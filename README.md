@@ -62,34 +62,33 @@ Este relatório documenta a preparação dos dados e a criação do
 individual. O mesmo código pode aparecer em várias transações; não
 remova registros apenas porque o ID se repete.
 
-## 3. Importar o CSV
+## 3. Passos realizados na Importação do CSV
 
-1.  Abrir o Power BI Desktop.
-2.  Selecionar **Home → Get Data → Text/CSV**.
-3.  Selecionar `excel_base(1).csv`.
-4.  Conferir a prévia.
-5.  Clicar em **Transform Data** para abrir o Power Query.
-6.  Renomear a consulta para `Sales`.
+1.  Aberto o Power BI Desktop.
+2.  Selecionado **Home → Get Data → Text/CSV**.
+3.  Selecionado arquivo a ser imnportado `excel_base(1).csv`.
+4.  Realizada a conferência prévia.
+5.  Clicado em **Transform Data** para abrir o Power Query.
+6.  Renomeada a consulta para `Sales`.
 
-## 4. Preparar os dados no Power Query
+## 4. Prepararação dos dados no Power Query
 
-Definir `SELL_DATE` como **Date**.
+Definido `SELL_DATE` como **Date**.
 
-Definir como **Decimal Number**: - `PRICE_SQFT` - `SQFT_SOLD` -
+Definido como **Decimal Number**: - `PRICE_SQFT` - `SQFT_SOLD` -
 `SALES_TOTAL` - `EXPENSES` - `PROFIT`
 
-Definir como **Text**: - `MATERIAL_ID`, `MATERIAL_NAME`,
+Definido como **Text**: - `MATERIAL_ID`, `MATERIAL_NAME`,
 `MATERIAL_TYPE`, `MATERIAL_COLOR` - `CUSTOMER`, `CITY_NAME`,
 `COUNTY_NAME`, `STATE`, `TYPE`, `TRIMESTRE`
 
-Se as datas ou os números forem interpretados incorretamente, escolher a
-localidade adequada ao formato do arquivo. Conferir nulos, erros de
-conversão e separadores decimais. Depois, clicar em **Home → Close &
-Apply**.
+As datas e/ou números interpretados incorretamente tiveram a
+localidade adequada corrigida ao formato do arquivo. Foi conferido: nulos, erros de
+conversão e separadores decimais. Depois de aplicadas as correções o arquivo foi salvo.
 
-## 5. Criar a tabela calendário
+## 5. Criaç!ao da tabela calendário
 
-Selecionar **Modeling → New Table** e inserir:
+Selecionado **Modeling → New Table** e inserir:
 
 ``` dax
 Calendar =
@@ -99,7 +98,7 @@ CALENDAR(
 )
 ```
 
-Criar as colunas:
+Foram criadas as colunas:
 
 ``` dax
 Year =
@@ -133,7 +132,7 @@ Month Year =
 FORMAT(Calendar[Date], "MMM YYYY")
 ```
 
-Para ordenar os meses cronologicamente, crie:
+E pra ordenar os meses cronologicamente, foi criado:
 
 ``` dax
 Month Year Sort =
@@ -141,19 +140,19 @@ YEAR(Calendar[Date]) * 100 +
 MONTH(Calendar[Date])
 ```
 
-Selecione `Calendar[Month Year]` e use **Column tools → Sort by column →
+Selecionado `Calendar[Month Year]` e usado **Column tools → Sort by column →
 Month Year Sort**.
 
-### Relacionamento
+### Relacionamentos
 
-Na visão **Model**, relacione `Calendar[Date]` com `Sales[SELL_DATE]`.
+Na visão **Model**, foi relacionado `Calendar[Date]` com `Sales[SELL_DATE]`.
 Configure \*\*One-to-many (1:\*)\*\*, com `Calendar` no lado 1 e filtro
 em direção única de `Calendar` para `Sales`. Marque `Calendar` como
-tabela de datas, se essa opção estiver disponível.
+tabela de datas.
 
-## 6. Criar as medidas DAX
+## 6. Criação das medidas DAX
 
-Criar cada medida em **Modeling → New Measure**.
+Criada cada medida em **Modeling → New Measure**.
 
 ### Indicadores principais
 
@@ -217,13 +216,13 @@ Sales per Customer =
 DIVIDE([Total Sales], [Customers])
 ```
 
-Formate as medidas financeiras como moeda e `Profit Margin` como
+Formatadas as medidas financeiras como moeda e `Profit Margin` como
 percentual. `DIVIDE` lida com denominadores iguais a zero de forma
 segura.
 
-## 7. Construir o Executive Dashboard
+## 7. Construção do Executive Dashboard
 
-Crie uma página chamada `Executive Dashboard`.
+Criada uma página chamada `Executive Dashboard`.
 
 ### 7.1 Título
 
@@ -232,7 +231,7 @@ Subtítulo: **Granite & Solid Surface Sales --- 2024**
 
 ### 7.2 KPIs
 
-Crie visuais **Card**:
+Criação dos visuais **Card**:
 
   KPI             Medida
   --------------- -------------------
@@ -263,10 +262,10 @@ Visual: **Line and Clustered Column Chart** - Axis:
 Adicionar slicers para: - `Calendar[Year]` - `Sales[STATE]` -
 `Sales[MATERIAL_TYPE]` - `Sales[TYPE]`
 
-Testar se os filtros atualizam os visuais corretamente. Se necessário,
-usar **Format → Edit interactions**.
+Testado se os filtros atualizam os visuais corretamente. Quando necessário,
+usado **Format → Edit interactions**.
 
-## 8. Layout recomendado
+## 8. Criação do Layout do Dashboard
 
 1.  Título e período analisado.
 2.  Linha superior de KPIs.
@@ -275,7 +274,7 @@ usar **Format → Edit interactions**.
 5.  Faturamento versus lucro.
 6.  Slicers organizados numa área consistente.
 
-Use fundo claro, títulos legíveis e poucas cores de destaque.
+Usado fundo claro, títulos legíveis e poucas cores de destaque.
 
 ## 9. Validação e critérios de conclusão
 
