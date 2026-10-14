@@ -1,6 +1,6 @@
 # Granite & Solid Surface Sales Analytics
 
-## Relatório 1 --- Da importação do CSV ao Executive Dashboard
+## Relatório 1 --- Importação de base de dados CSV e criação do Executive Dashboard
 
 ![Power BI](https://img.shields.io/badge/Tool-Power%20BI-yellow)
 ![Portfolio](https://img.shields.io/badge/Project-Portfolio-blue)
@@ -8,14 +8,13 @@
 
 ## 1. Objetivo
 
-Este projeto transforma uma base de vendas em CSV em um dashboard
+O Projeto de Extensão 4 tem como objetivo transformar uma base de vendas em CSV em um dashboard
 interativo no Power BI para acompanhar faturamento, despesas, lucro,
 margem, volume vendido, materiais e distribuição geográfica de uma
-empresa de Granite & Solid Surface durante 2024.
+empresa de Granite & Solid Surface durante o ano de 2024.
 
-Este primeiro relatório documenta a preparação dos dados e a criação do
-**Executive Dashboard**. O segundo relatório cobre as análises
-detalhadas.
+Este relatório documenta a preparação dos dados e a criação do
+**Executive Dashboard**. 
 
 ## 2. Base de dados
 
@@ -295,6 +294,5 @@ Ao concluir este relatório, o projeto terá os dados preparados, uma
 tabela calendário, medidas DAX reutilizáveis e um **Executive
 Dashboard** para resumir o desempenho de 2024.
 
-**Próximo passo:** consultar `README_02_Analises_e_Rentabilidade.md`
-para documentar Sales Analysis, Material Analysis, Geographic Analysis,
+**Próxima fase a ser construida no Projeto de Extensão 5:**  documentar Sales Analysis, Material Analysis, Geographic Analysis,
 Customer Analysis e análise de rentabilidade.
