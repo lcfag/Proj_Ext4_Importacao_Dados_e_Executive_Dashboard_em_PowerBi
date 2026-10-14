@@ -1,6 +1,6 @@
 # Granite & Solid Surface Sales Analytics
 
-## Relatório 1 --- Importação de base de dados CSV e criação do Executive Dashboard
+## Importação de base de dados CSV e criação do Executive Dashboard
 
 ![Power BI](https://img.shields.io/badge/Tool-Power%20BI-yellow)
 ![Portfolio](https://img.shields.io/badge/Project-Portfolio-blue)
