@@ -289,7 +289,7 @@ Usado fundo claro, títulos legíveis e poucas cores de destaque.
 
 ## 10. Resultado esperado
 
-Ao concluir este relatório, o projeto terá os dados preparados, uma
+Ao concluir este relatório, o projeto tem os dados preparados, uma
 tabela calendário, medidas DAX reutilizáveis e um **Executive
 Dashboard** para resumir o desempenho de 2024.
 
